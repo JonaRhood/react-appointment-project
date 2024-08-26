@@ -10,8 +10,8 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-  const [contacts, setContacts] = useState();
-  const [appointments, setAppointments] = useState();
+  const [contacts, setContacts] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   /*
   Implement functions to add data to
@@ -19,17 +19,20 @@ function App() {
   */
   const addContact = (contactName, contactPhone, contactEmail) => {
     const capitalizeName = (name) => {
-      name.split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-        .join(' ');
-
-      setContacts(prevContacts => [...prevContacts, {
-          name: capitalizeName(contactName),
-          phone: contactPhone,
-          email: contactEmail.toLowerCase()
-      }]);
+      return name.split(' ')
+                 .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                 .join(' ');
     }
+
+    setContacts(prevContacts => [...prevContacts, {
+      name: capitalizeName(contactName),
+      phone: contactPhone,
+      email: contactEmail.toLowerCase()
+    }]);
+
   }
+
+  console.log(contacts);
 
   const addAppointment = (appointmentName, contact, date, time) => {
     setAppointments(prevAppointments => [...prevAppointments, {
@@ -40,11 +43,13 @@ function App() {
     }])
   }
 
+  console.log(contacts);
+
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />
-      <Route path={ROUTES.CONTACTS} element={<ContactsPage contacts={contacts} appointments={appointments} /> /* Add props to ContactsPage */} />
-      <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage /> /* Add props to AppointmentsPage */} />
+      <Route path={ROUTES.CONTACTS} element={<ContactsPage contacts={contacts} addContact={addContact} /> /* Add props to ContactsPage */} />
+      <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */} />
     </Route>
   ));
 

@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, N
 import Root, { ROUTES } from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   /*
@@ -17,6 +17,7 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
+
   const addContact = (contactName, contactPhone, contactEmail) => {
     const capitalizeName = (name) => {
       return name.split(' ')
@@ -29,9 +30,8 @@ function App() {
       phone: contactPhone,
       email: contactEmail.toLowerCase()
     }]);
+    contacts.reverse();
   }
-
-  contacts.reverse();
 
   const addAppointment = (appointmentName, contact, date, time) => {
     setAppointments(prevAppointments => [...prevAppointments, {
@@ -47,8 +47,10 @@ function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />
-      <Route path={ROUTES.CONTACTS} element={<ContactsPage contacts={contacts} addContact={addContact} /> /* Add props to ContactsPage */} />
-      <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */} />
+      <Route path={ROUTES.CONTACTS} element={<ContactsPage 
+      contacts={contacts} addContact={addContact} /> /* Add props to ContactsPage */} />
+      <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage 
+      contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */} />
     </Route>
   ));
 

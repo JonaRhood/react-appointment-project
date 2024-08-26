@@ -26,16 +26,17 @@ export const ContactForm = ({
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="inputName" >Name:</label>
-        <input id="inputName" type="text" value={name} onChange={handleText}></input>
+        <input id="inputName" type="text" value={name} onChange={handleText} required></input>
         <label htmlFor="inputPhone">Phone: </label>
         <input
           type="tel" pattern="[1-9][0-9]{10}"
           value={phone}
           onChange={handleTel}
+          required
           >
         </input>
         <label htmlFor="inputEmail">Email:</label>
-        <input id="inputEmail" type="email" value={email} onChange={handleEmail}></input>
+        <input id="inputEmail" type="email" value={email} onChange={handleEmail} required></input>
         <button type="Submit">Submit</button>
       </form>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Tile } from "../tile/Tile"
 
-export const TileList = ({ contacts }) => {
+export const TileList = ({ contacts, appointments }) => {
   return (
     <div>
       {contacts.map(function (obj, idx) {

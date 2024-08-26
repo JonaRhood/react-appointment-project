@@ -29,10 +29,9 @@ function App() {
       phone: contactPhone,
       email: contactEmail.toLowerCase()
     }]);
-
   }
 
-  console.log(contacts);
+  contacts.reverse();
 
   const addAppointment = (appointmentName, contact, date, time) => {
     setAppointments(prevAppointments => [...prevAppointments, {

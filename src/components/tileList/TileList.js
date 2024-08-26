@@ -2,18 +2,20 @@ import React from "react";
 import { Tile } from "../tile/Tile"
 
 export const TileList = ({ contacts }) => {
-
-  
-
   return (
     <div>
-      {contacts.reverse().map(function (obj) {
+      {contacts.map(function (obj, idx) {
+        const { name, ...rest } = obj;
+        
         return (
-          <ul>
-            <li>Name: {obj.name}</li>
-            <li>Phone: {obj.phone}</li>
-            <li>Email: {obj.email}</li>
-          </ul>
+          <div key={idx}>
+            <ul>
+              <li><h4>{name}</h4></li>
+              {Object.values(rest).map((value) => (
+                <li>{`${value}`}</li>
+              ))}
+            </ul>
+          </div>
         )
       })}
     </div>

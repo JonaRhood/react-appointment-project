@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, N
 import Root, { ROUTES } from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   /*
@@ -30,7 +30,6 @@ function App() {
       phone: contactPhone,
       email: contactEmail.toLowerCase()
     }]);
-    contacts.reverse();
   }
 
   const addAppointment = (appointmentName, contact, date, time) => {

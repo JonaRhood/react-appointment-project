@@ -31,7 +31,8 @@ export const ContactForm = ({
       <form onSubmit={handleSubmit} id="formContacts" name="formContacts">
         <label htmlFor="inputName" >Name & Last Name:</label>
         <input id="inputName" type="text" value={name} onChange={handleText} 
-        required placeholder="Type here your name and last name"></input>
+        required placeholder="Type here your name and last name"
+        user-scalable="no"></input>
         <label htmlFor="inputPhone">Phone: </label>
         <input
           type="tel" pattern="^\+?[0-9]{9,16}$"

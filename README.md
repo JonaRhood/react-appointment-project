@@ -3,19 +3,17 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/55c42092-423b-44a8-b38e-f944c9eec621/deploy-status)](https://app.netlify.com/sites/appointment-cp/deploys)
 
 
-# <img src="https://media.giphy.com/media/bSGaDqzFlVraDNxa75/giphy.gif?cid=ecf05e47obwpnnbf7ghb1ht5hixuckmjyi7umanjejmdzcon&ep=v1_gifs_related&rid=giphy.gif&ct=s" width="30">&nbsp; Appointment Project &nbsp; <img src="https://media.giphy.com/media/bSGaDqzFlVraDNxa75/giphy.gif?cid=ecf05e47obwpnnbf7ghb1ht5hixuckmjyi7umanjejmdzcon&ep=v1_gifs_related&rid=giphy.gif&ct=s" width="30">
-
+# <img src="https://media.giphy.com/media/ffumjakqlYO2kaRPKL/giphy.gif?cid=790b7611krpdermigmst5mjlw59ha0zhrqh979x7gy7cdo3h&ep=v1_gifs_search&rid=giphy.gif&ct=s" width="30">&nbsp; Appointment Project 
 <br />
 <div align="center">
     <img src="./src/resources/img/img-webapp.png" alt="Logo" width="800" >
 </div>
 <br />
 
-Jamming is a React project developed by students in Codecademy’s Full Stack course. It’s a playlist creator that utilizes Spotify’s search API, allowing you to quickly create playlists directly from your browser.
+This project is a React-based web application I developed as part of Codecademy's Full Stack Engineering course. The application is designed to manage appointments and contacts, and it provided a hands-on way for me to deepen my understanding of React state management and React Router. Throughout the project, I focused on building a responsive, user-friendly interface and implementing smooth navigation between different sections of the app.
 
-Link to live project: <a href="https://jammming-cp.netlify.app">https://jammming-cp.netlify.app</a><br/>
-<br/>
-<i><strong>Note:</strong> You cannot create playlists due to Spotify's API Development Mode restrictions, but you can explore the app's UI and functionality.</i>
+Link to live project: <a href="https://appointment-cp.netlify.app/">https://appointment-cp.netlify.app/</a><br/>
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -33,14 +31,14 @@ Link to live project: <a href="https://jammming-cp.netlify.app">https://jammming
 
 ## ✏️ &nbsp; <a id="project-overview">Project Overview</a>
 
-The objective was to create a React-based web application for managing appointments and contacts, where the user can add, view, and delete appointments.
+The primary objective of this project was to create a React-based web application that enables users to manage both appointments and contacts. This involves building a user interface and functionality to handle a variety of tasks related to scheduling and contact management.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💿 &nbsp; <a id="features">Features</a>
 
-- **Contact Form** Provide a form for users to input details about a new contact, including name, phone number and email.
-- **Contact List** Display a list of contacts with details such as name, phone number and email.
+- **Contact Form:** Provide a form for users to input details about a new contact, including name, phone number and email.
+- **Contact List:** Display a list of contacts with details such as name, phone number and email.
 - **Appointment Form:** Provide a form for users to input details about a new appointment, including title, contact, date and time.
 - **Appointment List:** Display a list of scheduled appointments with details such as title, contact, date and time.
 - **Delete Contact:** Enable users to remove contacts from the list
@@ -51,13 +49,18 @@ The objective was to create a React-based web application for managing appointme
 ## 🛠️ &nbsp; <a id="installation">Installation</a>
 
 1. Clone the repo:
-```
+```bash
 git clone https://github.com/JonaRhood/react-appointment-project
 ```
 
 2. Install NPM packages:
 ```bash
 npm install
+```
+
+3. Run the application:
+```bash
+npm start
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

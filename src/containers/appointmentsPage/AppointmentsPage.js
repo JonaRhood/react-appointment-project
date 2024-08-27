@@ -23,8 +23,8 @@ export const AppointmentsPage = ({ contacts, appointments, addAppointment, delet
   };
 
   // Detects button event in Tile.js and sends the key name to App.js to remove an appointment.
-  const removeAppointment = (name) => {
-    deleteAppointment(name);
+  const removeAppointment = (index) => {
+    deleteAppointment(index);
   }
 
   return (

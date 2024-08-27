@@ -53,8 +53,8 @@ function App() {
     }]);
   }
   // Function to delete contacts:
-  const deleteContact = (name) => {
-    setContacts(prevContact => prevContact.filter((contacts) => contacts.name !== name))
+  const deleteContact = (index) => {
+    setContacts(prevContact => prevContact.filter((_, i) => i !== index))
   }
 
   // Function to add an appointment to appointments:
@@ -67,9 +67,9 @@ function App() {
     }])
   }
   // Function to delete an appointment:
-  const deleteAppointment = (name) => {
+  const deleteAppointment = (index) => {
     setAppointments(prevAppointment => 
-      prevAppointment.filter((appointments) => appointments.name !== name))
+      prevAppointment.filter((_, i) => i !== index))
   }
 
   // Map routing from REACT Router:

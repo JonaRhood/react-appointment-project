@@ -9,25 +9,20 @@ export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
  const [email, setEmail] = useState('');
- const [duplicatedName] = useState(false);
 
   // Sends input data to App.js to update the contacts state array.
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!duplicatedName) {
       addContact(name, phone, email);
       setName('');
       setPhone('');
       setEmail('');
-    } else {
-      alert("Contact name already exists.")
-    }
   };
-  
+
   // Detects button event in Tile.js and sends the key name to App.js to remove a contact.
-  const removeContact = (name) => {
-    deleteContact(name);
+  const removeContact = (index) => {
+    deleteContact(index);
   }
 
   return (

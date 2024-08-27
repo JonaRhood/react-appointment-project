@@ -5,15 +5,15 @@ import { Tile } from "../tile/Tile"
 export const TileList = ({ tiles, removeItem }) => {
 
   // Removes an item from the list, prop passed from ContactsPage.js and AppointmentsPage.js.
-  const handleRemove = (name) => {
-    removeItem(name);
+  const handleRemove = (index) => {
+    removeItem(index);
   }
 
   return (
     <div id="divTileList">
       {tiles.map((tile, idx) => {
         const { name, ...description } = tile;
-        return <Tile key={name} name={name} description={description} handleRemove={handleRemove} />
+        return <Tile key={idx} name={name} description={description} handleRemove={handleRemove} index={idx}/>
       })}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
@@ -11,7 +11,7 @@ export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
  const [email, setEmail] = useState('');
- const [duplicatedName, setDuplicatedName] = useState(false);
+ const [duplicatedName] = useState(false);
 
   // useEffect(() => {
   //   const isDuplicate = contacts.some(contact => contact.name === name);

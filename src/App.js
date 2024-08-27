@@ -6,7 +6,8 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 import { useState } from "react";
 
 function App() {
-
+  // Constant to save the list of contacts, searches localStorage first for default, 
+  // if not returns empty Array:
   const [contacts, setContacts] = useState(() => {
     const saved = localStorage.getItem("contact");
     const initialValue = JSON.parse(saved);
@@ -16,7 +17,9 @@ function App() {
       return initialValue;
     }
   });
-  
+
+  // Constant to save the list of appointments, searches localStorage first for default, 
+  // if not returns empty Array:
   const [appointments, setAppointments] = useState(() => {
     const saved = localStorage.getItem("appointment")
     const initialValue = JSON.parse(saved);
@@ -27,6 +30,7 @@ function App() {
     }
   });
 
+  // Effects to store contacts and appointments to the localStorage when they get updated:
   useEffect(() => {
     localStorage.setItem("contact", JSON.stringify(contacts));
   }, [contacts]);
@@ -35,24 +39,25 @@ function App() {
     localStorage.setItem("appointment", JSON.stringify(appointments));
   }, [appointments])
 
+  // Function to add a contact to contacts:
   const addContact = (contactName, contactPhone, contactEmail) => {
-    const capitalizeName = (name) => {
+    const capitalizeName = (name) => { // Capitalizes the first letter of each word.
       return name.split(' ')
                  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                  .join(' ');
     }
-
     setContacts(prevContacts => [...prevContacts, {
       name: capitalizeName(contactName),
       phone: contactPhone,
       email: contactEmail.toLowerCase()
     }]);
   }
-
+  // Function to delete contacts:
   const deleteContact = (name) => {
     setContacts(prevContact => prevContact.filter((contacts) => contacts.name !== name))
   }
 
+  // Function to add an appointment to appointments:
   const addAppointment = (appointmentName, contact, date, time) => {
     setAppointments(prevAppointments => [...prevAppointments, {
       name: appointmentName,
@@ -61,12 +66,13 @@ function App() {
       time: time
     }])
   }
-
+  // Function to delete an appointment:
   const deleteAppointment = (name) => {
     setAppointments(prevAppointment => 
       prevAppointment.filter((appointments) => appointments.name !== name))
   }
 
+  // Map routing from REACT Router:
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />

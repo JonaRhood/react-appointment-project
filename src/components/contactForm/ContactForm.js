@@ -1,3 +1,4 @@
+// Renders the Contact Form
 import React from "react";
 
 export const ContactForm = ({
@@ -11,17 +12,15 @@ export const ContactForm = ({
 }) => {
 
   
-  
+   // Constants to handle input onChange's and uptade the different states:
   const handleText = (event) => {
     setName(event.target.value)
   }
-
   const handleTel = (event) => {
     const input = event.target.value;
-    const filteredInput = input.replace(/[^0-9+]/g, "");
+    const filteredInput = input.replace(/[^0-9+]/g, ""); // Accepts only numbers and "+".
     setPhone(filteredInput)
   }
-
   const handleEmail = (event) => {
     setEmail(event.target.value)
   }

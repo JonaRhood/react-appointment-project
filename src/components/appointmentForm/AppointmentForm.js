@@ -1,6 +1,8 @@
+// Renders the Appointment Form
 import React from "react";
 import { ContactPicker } from "../contactPicker/ContactPicker"
 
+// Function to set today's date as the minimum value for the "min" attribute in the input:
 const getTodayString = () => {
   const [month, day, year] = new Date()
     .toLocaleDateString("en-US")
@@ -21,18 +23,16 @@ export const AppointmentForm = ({
   handleSubmit
 }) => {
 
+  // Constants to handle input onChange's and uptade the different states:
   const handleTitleInput = (e) => {
     setTitle(e.target.value);
   }
-
   const handleDateInput = (e) => {
     setDate(e.target.value);
   }
-
   const handleTimeInput = (e) => {
     setTime(e.target.value);
   }
-
   const handleContactInput = (e) => {
     setContact(e.target.value);
   }

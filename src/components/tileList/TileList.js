@@ -1,8 +1,10 @@
+// Renders a Tile List 
 import React from "react";
 import { Tile } from "../tile/Tile"
 
 export const TileList = ({ tiles, removeItem }) => {
 
+  // Removes an item from the list, prop passed from ContactsPage.js and AppointmentsPage.js.
   const handleRemove = (name) => {
     removeItem(name);
   }

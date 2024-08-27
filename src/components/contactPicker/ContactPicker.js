@@ -1,3 +1,4 @@
+// Renders a <select> dropdown for contacts in the Appointment Form.
 import React from "react";
 
 export const ContactPicker = ({ contacts, handleContactInput, contact }) => {

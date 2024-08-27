@@ -30,9 +30,6 @@ h2 {
   margin-bottom: 18px;
 }
 
-section {
-}
-
 hr {
   border: none;
   border-top: 1px solid #979797;
@@ -68,7 +65,7 @@ form {
 form label, 
 form input, 
 form button {
-  width: 100%; /* Hace que los elementos ocupen el 100% del ancho de su contenedor */
+  width: 100%; 
 }
 
 input,

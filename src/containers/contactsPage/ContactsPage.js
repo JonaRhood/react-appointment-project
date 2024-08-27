@@ -1,30 +1,20 @@
+// Renders the Contact Page
 import React, { useState } from "react";
 
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
+ // Hook States
  const [name, setName] = useState('');
  const [phone, setPhone] = useState('');
  const [email, setEmail] = useState('');
  const [duplicatedName] = useState(false);
 
-  // useEffect(() => {
-  //   const isDuplicate = contacts.some(contact => contact.name === name);
-  //   setDuplicatedName(isDuplicate);
-  // }, [name, contacts])
-
-
+  // Sends input data to App.js to update the contacts state array.
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
+
     if (!duplicatedName) {
       addContact(name, phone, email);
       setName('');
@@ -34,17 +24,11 @@ export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
       alert("Contact name already exists.")
     }
   };
-
+  
+  // Detects button event in Tile.js and sends the key name to App.js to remove a contact.
   const removeContact = (name) => {
     deleteContact(name);
   }
-
-  
-
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
 
   return (
     <div>

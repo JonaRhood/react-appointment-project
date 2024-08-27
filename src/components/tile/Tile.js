@@ -1,3 +1,4 @@
+// Renders Tiles
 import React from "react";
 
 export const Tile = ({ name, description, handleRemove }) => {

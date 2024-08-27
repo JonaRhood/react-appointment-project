@@ -1,3 +1,4 @@
+// REACT's Router Root 
 import {  Outlet, NavLink } from "react-router-dom";
 
 export const ROUTES = {

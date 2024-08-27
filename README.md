@@ -10,7 +10,7 @@
 </div>
 <br />
 
-This project is a React-based web application I developed as part of **Codecademy's Full Stack Engineering course**. The application is designed to manage appointments and contacts, and it provided a hands-on way for me to deepen my understanding of React state management and React Router. Throughout the project, I focused on building a responsive, user-friendly interface and implementing smooth navigation between different sections of the app.
+This project is a React-based web application I developed as part of **<a href="https://www.codecademy.com">Codecademy's</a> Full Stack Engineering course**. The application is designed to manage appointments and contacts, and it provided a hands-on way for me to deepen my understanding of React state management and React Router. Throughout the project, I focused on building a responsive, user-friendly interface and implementing smooth navigation between different sections of the app.
 
 **Link to live project:** <a href="https://appointment-cp.netlify.app/">https://appointment-cp.netlify.app/</a><br/>
 

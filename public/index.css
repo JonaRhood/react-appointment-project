@@ -62,7 +62,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem; /* Espacio entre los elementos */
+  gap: 0.4rem; /* Espacio entre los elementos */
 }
 
 form label, 

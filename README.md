@@ -6,7 +6,7 @@
 # <img src="https://media.giphy.com/media/ffumjakqlYO2kaRPKL/giphy.gif?cid=790b7611krpdermigmst5mjlw59ha0zhrqh979x7gy7cdo3h&ep=v1_gifs_search&rid=giphy.gif&ct=s" width="30">&nbsp; Appointment Project 
 <br />
 <div align="center">
-    <img src="./src/resources/img/img-webapp.png" alt="Logo" width="800" >
+    <img src="./src/resources/img/img-webapp.png" alt="Logo" width="750" >
 </div>
 <br />
 
@@ -43,6 +43,7 @@ The primary objective of this project was to create a React-based web applicatio
 - **Appointment List:** Display a list of scheduled appointments with details such as title, contact, date and time.
 - **Delete Contact:** Enable users to remove contacts from the list
 - **Delete Appointment:** Enable users to remove appointments from the list.
+- **Local Storage:** Automatically stores all contacts and appointments in the browser's Local Storage, ensuring your data is preserved across sessions without requiring a server.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

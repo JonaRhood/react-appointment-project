@@ -9,13 +9,16 @@ export const ContactForm = ({
   setEmail,
   handleSubmit
 }) => {
+
   
   const handleText = (event) => {
     setName(event.target.value)
   }
 
   const handleTel = (event) => {
-    setPhone(event.target.value)
+    const input = event.target.value;
+    const filteredInput = input.replace(/[^0-9+]/g, "");
+    setPhone(filteredInput)
   }
 
   const handleEmail = (event) => {
@@ -25,19 +28,22 @@ export const ContactForm = ({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="inputName" >Name:</label>
-        <input id="inputName" type="text" value={name} onChange={handleText} required></input>
+        <label htmlFor="inputName" >Name & Last Name:</label>
+        <input id="inputName" type="text" value={name} onChange={handleText} 
+        required placeholder="Type here your name and last name"></input>
         <label htmlFor="inputPhone">Phone: </label>
         <input
-          type="tel" pattern="[0-9]{9}"
+          type="tel" pattern="^\+?[0-9]{9,16}$"
           value={phone}
           onChange={handleTel}
           required
+          placeholder="Type here your phone number..."
           >
         </input>
         <label htmlFor="inputEmail">Email:</label>
-        <input id="inputEmail" type="email" value={email} onChange={handleEmail} required></input>
-        <button type="Submit">Submit</button>
+        <input id="inputEmail" type="email" value={email} onChange={handleEmail} required
+         placeholder="Type here your email..."></input>
+        <button type="Submit">Add Contact</button>
       </form>
     </>
   );

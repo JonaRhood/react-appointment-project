@@ -69,6 +69,11 @@ select {
   width: 100%;
   margin-bottom: 10px;
   box-sizing: border-box;
+  transition: ease all .3s;
+}
+
+input:valid {
+  border-bottom: rgba(0, 255, 0, 0.5) 3px solid;
 }
 
 .tile {
@@ -82,11 +87,11 @@ select {
 }
 
 .tile-container {
-  margin-bottom: 20px;
+  margin: 5px;
 }
 
 button {
-  padding: .3% 1%;
+  padding: .2rem .5rem;
   background-color: #03a8d8;
   font-size: 1rem;
   color: white;
@@ -99,30 +104,67 @@ button:hover {
   cursor: pointer;
 }
 
+#divTileList {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .tile-container {
-  padding: 2% 3%;
+  display: inline-block;
+  padding: 20px 50px;
   border: .2px rgba(0,0,0,0.1) solid;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   background-color: rgba(0,0,0,0.01);
   border-radius: 5px;
+  width: 40%;
+  height: 7rem;
+  overflow: auto;
+  align-content: center;
 }
 
 .tile-title {
   font-size: 1.2rem;
   font-weight: bold;
+  margin: 0;
 }
 
 .tile {
   line-height: 1.2;
+  width: 100%;
 }
 
 .tile-nameX {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
 }
 
 #xButton {
-  padding: .3% .5%;
+  padding: .2rem .5rem;
+}
 
+@media only screen and (max-width: 1200px) {
+.tile-container {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 890px) {
+ .tile-container {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .tile-container {
+    width: 100%;
+  }
 }

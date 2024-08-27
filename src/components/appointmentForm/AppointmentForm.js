@@ -42,14 +42,15 @@ export const AppointmentForm = ({
     <div>
       <form onSubmit={handleSubmit} id="formAppointments">
         <label htmlFor="titleInput">Title:</label>
-        <input type="text" id="titleInput" value={title} onChange={handleTitleInput}></input>
+        <input type="text" id="titleInput" value={title} onChange={handleTitleInput} 
+        required placeholder="Type here the title of your appointment..."></input>
         <label htmlFor="picker">Contact:</label>
         <ContactPicker contacts={contacts} handleContactInput={handleContactInput} contact={contact} picker />
         <label htmlFor="dateInput">Date:</label>
-        <input type="date" id="dateInput" min={getTodayString()} value={date} onChange={handleDateInput}></input>
+        <input type="date" id="dateInput" min={getTodayString()} value={date} onChange={handleDateInput} required></input>
         <label htmlFor="timeInput">Time:</label>
-        <input type="time" id="timeInput" value={time} onChange={handleTimeInput}></input>
-        <button type="submit">Submit</button>
+        <input type="time" id="timeInput" value={time} onChange={handleTimeInput} required></input>
+        <button type="submit">Add appointment</button>
       </form>
     </div>
     </>

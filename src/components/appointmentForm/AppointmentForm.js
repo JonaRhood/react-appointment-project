@@ -40,7 +40,7 @@ export const AppointmentForm = ({
   return (
     <>
     <div>
-      <form onSubmit={handleSubmit} id="formAppointments">
+      <form onSubmit={handleSubmit} id="formAppointments" name="formAppointments">
         <label htmlFor="titleInput">Title:</label>
         <input type="text" id="titleInput" value={title} onChange={handleTitleInput} 
         required placeholder="Type here the title of your appointment..."></input>

@@ -11,6 +11,7 @@ export const ContactForm = ({
 }) => {
 
   
+  
   const handleText = (event) => {
     setName(event.target.value)
   }
@@ -27,7 +28,7 @@ export const ContactForm = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="formContacts" name="formContacts">
         <label htmlFor="inputName" >Name & Last Name:</label>
         <input id="inputName" type="text" value={name} onChange={handleText} 
         required placeholder="Type here your name and last name"></input>
@@ -38,6 +39,7 @@ export const ContactForm = ({
           onChange={handleTel}
           required
           placeholder="Type here your phone number..."
+          id="inputPhone"
           >
         </input>
         <label htmlFor="inputEmail">Email:</label>

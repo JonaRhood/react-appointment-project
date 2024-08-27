@@ -11,7 +11,7 @@ export const TileList = ({ tiles, removeItem }) => {
     <div id="divTileList">
       {tiles.map((tile, idx) => {
         const { name, ...description } = tile;
-        return <Tile key={idx} name={name} description={description} handleRemove={handleRemove} />
+        return <Tile key={name} name={name} description={description} handleRemove={handleRemove} />
       })}
     </div>
   );

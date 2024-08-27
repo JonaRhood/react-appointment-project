@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from "react-router-dom"
 import Root, { ROUTES } from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
@@ -6,17 +6,34 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 import { useState } from "react";
 
 function App() {
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
-  const [contacts, setContacts] = useState([]);
-  const [appointments, setAppointments] = useState([]);
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
+  const [contacts, setContacts] = useState(() => {
+    const saved = localStorage.getItem("contact");
+    const initialValue = JSON.parse(saved);
+    if (initialValue === undefined || initialValue === null) {
+      return [];
+    } else {
+      return initialValue;
+    }
+  });
+  
+  const [appointments, setAppointments] = useState(() => {
+    const saved = localStorage.getItem("appointment")
+    const initialValue = JSON.parse(saved);
+    if (initialValue === undefined || initialValue === null) {
+      return [];
+    } else {
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("contact", JSON.stringify(contacts));
+  }, [contacts]);
+
+  useEffect(() => {
+    localStorage.setItem("appointment", JSON.stringify(appointments));
+  }, [appointments])
 
   const addContact = (contactName, contactPhone, contactEmail) => {
     const capitalizeName = (name) => {
@@ -33,7 +50,6 @@ function App() {
   }
 
   const deleteContact = (name) => {
-    console.log(name);
     setContacts(prevContact => prevContact.filter((contacts) => contacts.name !== name))
   }
 
@@ -50,8 +66,6 @@ function App() {
     setAppointments(prevAppointment => 
       prevAppointment.filter((appointments) => appointments.name !== name))
   }
-
-  console.log(contacts);
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>

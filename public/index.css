@@ -84,3 +84,34 @@ select {
 .tile-container {
   margin-bottom: 20px;
 }
+
+button {
+  padding: .3% 1%;
+  background-color: #03a8d8;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0db9ed;
+  cursor: pointer;
+}
+
+.tile-container {
+  padding: 2% 3%;
+  border: .2px rgba(0,0,0,0.1) solid;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.01);
+  border-radius: 5px;
+}
+
+.tile-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.tile {
+  line-height: 1.2;
+}

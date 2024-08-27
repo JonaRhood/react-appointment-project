@@ -29,7 +29,7 @@ export const ContactForm = ({
         <input id="inputName" type="text" value={name} onChange={handleText} required></input>
         <label htmlFor="inputPhone">Phone: </label>
         <input
-          type="tel" pattern="[1-9][0-9]{10}"
+          type="tel" pattern="[0-9]{9}"
           value={phone}
           onChange={handleTel}
           required

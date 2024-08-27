@@ -1,11 +1,12 @@
 import React from "react";
 
-export const Tile = ({ key, name, description }) => {
+export const Tile = ({ key, name, description, handleRemove }) => {
   return (
     <div className="tile-container">
-      <p className="tile-title">{name}</p>
+      <div className="tile-nameX"><p className="tile-title">{name}</p>
+      <button type="submit" id="xButton" onClick={() => handleRemove(name)}>X</button></div>
       {Object.values(description).map((value, index) => (
-        <p key={key} className="tile">{value}</p>
+        <p key={index} className="tile">{value}</p>
       ))}
     </div>
   );

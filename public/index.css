@@ -115,3 +115,14 @@ button:hover {
 .tile {
   line-height: 1.2;
 }
+
+.tile-nameX {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#xButton {
+  padding: .3% .5%;
+
+}

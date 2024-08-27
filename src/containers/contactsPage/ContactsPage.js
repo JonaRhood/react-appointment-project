@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const ContactsPage = ({ contacts, addContact }) => {
+export const ContactsPage = ({ contacts, addContact, deleteContact }) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -35,6 +35,10 @@ export const ContactsPage = ({ contacts, addContact }) => {
     }
   };
 
+  const removeContact = (name) => {
+    deleteContact(name);
+  }
+
   
 
   /*
@@ -56,7 +60,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList tiles={contacts} />
+        <TileList tiles={contacts} removeItem={removeContact} />
       </section>
     </div>
   );

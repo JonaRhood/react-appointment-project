@@ -32,6 +32,11 @@ function App() {
     }]);
   }
 
+  const deleteContact = (name) => {
+    console.log(name);
+    setContacts(prevContact => prevContact.filter((contacts) => contacts.name !== name))
+  }
+
   const addAppointment = (appointmentName, contact, date, time) => {
     setAppointments(prevAppointments => [...prevAppointments, {
       name: appointmentName,
@@ -41,15 +46,21 @@ function App() {
     }])
   }
 
+  const deleteAppointment = (name) => {
+    setAppointments(prevAppointment => 
+      prevAppointment.filter((appointments) => appointments.name !== name))
+  }
+
   console.log(contacts);
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />
       <Route path={ROUTES.CONTACTS} element={<ContactsPage 
-      contacts={contacts} addContact={addContact} /> /* Add props to ContactsPage */} />
+      contacts={contacts} addContact={addContact} deleteContact={deleteContact}/> /* Add props to ContactsPage */} />
       <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage 
-      contacts={contacts} appointments={appointments} addAppointment={addAppointment} /> /* Add props to AppointmentsPage */} />
+      contacts={contacts} appointments={appointments} addAppointment={addAppointment} 
+      deleteAppointment={deleteAppointment}/> /* Add props to AppointmentsPage */} />
     </Route>
   ));
 

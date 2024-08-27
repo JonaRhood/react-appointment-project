@@ -58,6 +58,19 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem; /* Espacio entre los elementos */
+}
+
+form label, 
+form input, 
+form button {
+  width: 100%; /* Hace que los elementos ocupen el 100% del ancho de su contenedor */
+}
+
 input,
 select {
   font-family: "Open Sans", sans-serif;

@@ -80,8 +80,8 @@ npm start
 
 ## 👤 &nbsp; <a id="contact">Contact</a>
 
-<a href="https://github.com/JonaRhood/react-projects/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=JonaRhood/react-projects" />
+<a href="https://github.com/JonaRhood/react-appointment-project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=JonaRhood/react-appointment-project" />
 </a>
 
 [![LinkedIn][linkedin-shield]][linkedin-url] <br />
@@ -94,7 +94,7 @@ Jonathan Cano -  jonathancanofreta@gmail.com
 [linkedin-url]: https://www.linkedin.com/in/jonathancanocalduch
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Reactrouter.js]: https://img.shields.io/badge/React%20router-20232A?style=for-the-badge&logo=reactrouter&logoColor=white
+[Reactrouter.js]: https://img.shields.io/badge/React%20router-2d1f09?style=for-the-badge&logo=reactrouter&logoColor=white
 [Reactrouter-url]: https://reactrouter.com/
 [Javascript.js]: https://img.shields.io/badge/Javascript-3b473e?style=for-the-badge&logo=JavaScript&logoColor=Y
 [Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
